@@ -1,0 +1,26 @@
+
+Po wejściu na stronę internetową użytkownik zostaje powitany przez dynamiczny slider umieszczony tuż pod nawigacją strony. Slider zawiera logo firmy oraz inspirujące slogany lub hasła jak i również zdjęcia ważnych  dla firmy wydarzeń, zajmując 1/4 górnej części ekranu, co natychmiast przyciąga uwagę odwiedzających.
+
+Poniżej logo znajdują się  informacje o misjach kosmicznych, pobrane z bazy danych, zawierające datę planowanego startu oraz imię osoby odpowiedzialnej za każdą z misji. Te fascynujące szczegóły są wyświetlane czterokrotnie na stronie, zapewniając aktualność i atrakcyjność treści.
+
+Przesuwając się w dół strony, użytkownik natrafia na stopkę, gdzie znajdują się istotne informacje, takie jak dane kontaktowe, linki do mediów społecznościowych, logo firmy jako znak towarowy oraz polityka prywatności.
+
+W nawigacji strony znajdują się odnośniki do podstron o różnych tematach. Począwszy od Misji, poprzez Kosmonautów, Naukowców, aż po możliwość aplikacji do pracy i zarządzania misjami (tylko dla uprawnionych użytkowników). Dostępne są również opcje Logowania oraz menu powiadomień.
+
+Na podstronie Misje użytkownicy znajdą pełną listę aktualnie planowanych misji kosmicznych, uporządkowanych według daty ich realizacji, co umożliwia łatwe śledzenie najnowszych wydarzeń.
+
+Podstrona Kosmonauci prezentuje zespół pracowników działu kosmonautów, uporządkowanych według stażu pracy, co pozwala odwiedzającym zapoznać się z doświadczeniem i historią każdego z nich.
+
+Na podstronie Naukowcy znajdują się profile wszystkich członków działu naukowego, posortowane według osiągnięć, co pozwala użytkownikom szybko zidentyfikować ekspertów w różnych dziedzinach.
+
+Na podstronie Pracuj z nami prezentowany jest krótki opis firmy oraz jej celów, z możliwością przesłania swoich informacji, które zostaną automatycznie zapisane w bazie danych rekrutacyjnej.
+
+Podstrona Zarządzanie misjami udostępnia możliwość zwalniania pracowników oraz zaturdniania ich jak i akceptowanie aplikacji złożonych na stronie administrator w tej zakładce bedzie mógł także zarządzać misjami tzn dodawać je i usuwać dzięki czemu jest w stanie spokojnie kontrolować baze danych nawet bez znajomosci sql.
+
+Na podstronie Logowanie użytkownicy zostaną przywitani przez proste okno logowania, które zawierać będzie dwa pola tekstowe przeznaczone na wpisanie loginu i hasła. Wystarczy wprowadzić odpowiednie dane, a następnie kliknąć przycisk "Zaloguj". Nie będzie tutaj opcji rejestracji, gdyż zarówno loginy, jak i hasła będą przydzielane przez administratora po formalnym przyjęciu do firmy.
+
+Zakładka Powiadomienia umożliwia szybki dostęp do najnowszych osiągnięć i sukcesów firmy, zintegrowana z każdą podstroną i łatwo dostępna dla użytkowników.
+
+Cała strona opiera się na czarno-białym schemacie kolorystycznym z odrobiną space-blue czyli koloru nocnego nieba, co nadaje jej elegancji i profesjonalizmu, a język angielski został wybrany w celu dotarcia do szerszego grona odbiorców.
+
+Cele projektu obejmują promowanie firmy, budowanie rozpoznawalności marki w Internecie, rekrutację nowych pracowników w celu odciążenia istniejących działów, publikację treści dla zainteresowanych osób oraz inwestorów.

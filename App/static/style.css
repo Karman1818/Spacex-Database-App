@@ -1,0 +1,451 @@
+* {
+  background-color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+
+
+.nav {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  width: 100%;
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: black;
+  padding: 0 20px;
+}
+
+
+#logo {
+  height: 14vh;
+  width: 15vw;
+  margin: -35px 0 0 0; 
+}
+
+
+.nav-item {
+  background: none !important;
+  border: none;
+  padding: 0 10px !important; 
+  cursor: pointer;
+  font-weight: bold;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.nav-item {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0; 
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.nav-item::after {
+  display: block;
+  content: "";
+  margin: auto;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.link1 {
+  text-decoration: none;
+  color: inherit;
+}
+
+#Dots {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  margin-right: 3vh;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.sidepanel {
+  height: 100vh;
+  width: 20vw;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -20vw;
+  background-color: black;
+  overflow-x: hidden;
+  padding-top: 6vh;
+  transition: 0.5s;
+}
+
+.sidepanel a {
+  padding: 2vh 2vw;
+  text-decoration: none;
+  font-size: 2.5vw;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  font-size: 2vw;
+  right: 15vw;
+}
+
+#Update {
+  margin-top: 3vh;
+  text-align: center;
+}
+
+.sidepanel p {
+  margin: 20px;
+}
+
+#slider {
+  width: 100%;
+  height: 40vh;
+  top: 10vh;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  height: 40vh;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides img {
+  width: auto;
+  height: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: calc(55% - 22px);
+  width: auto;
+  padding: 1vh;
+  color: white;
+  font-weight: bold;
+  font-size: 1.8vh;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 1.5vh;
+  width: 1.5vh;
+  margin: 0 1vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4 }
+  to { opacity: 1 }
+}
+
+.main {
+  height: 1300px;
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.mission {
+  margin: 20vh;
+  padding: 5vh;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mission:hover {
+  padding: 10vh;
+  background-color: white;
+  color: black;
+  border-width: 7px;
+  border-color: #1f4277;
+}
+
+.mission p {
+  transition: all 0.3s ease;
+}
+
+.mission:hover p {
+  color: black;
+  background-color: white;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20vh;
+  padding: 0 25vh;
+  border: solid #fff;
+  height: 50vh;
+  margin-bottom: 21vh;
+  box-sizing: border-box; 
+  overflow: auto; 
+}
+
+
+.table h1 {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.table table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table table th {
+  background-color: #1f4277;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table table tr:hover {
+  background-color: #ddd;
+}
+
+.footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 2;
+}
+
+#contact {
+  font-size: small;
+  margin-left: 15px;
+  z-index: 2;
+}
+
+#contact span {
+  font-weight: bold;
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#trademark {
+  width: 100px;
+  height: 30px;
+  z-index: 2;
+}
+
+#privacyPolicy {
+  z-index: 2;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#privacyPolicy a {
+  color: #fff;
+  text-decoration: none;
+ 
+}
+
+#socialMedia {
+  z-index: 0;
+}
+
+#socialMedia a {
+  margin-right: 55px;
+  margin-left: 25px;
+}
+
+#socialMedia img {
+  width: 30px;
+  height: 30px;
+}
+
+.link1 {
+  color: #fff;
+  text-decoration: none;
+}
+
+.row{
+  color: inherit !important;
+  text-decoration: none !important;
+  background-color: #1f4277;
+}
+
+
+@media (max-width: 1200px) {
+  .nav-item {
+    margin: 0 0.5vw;
+  }
+}
+
+@media (max-width: 992px) {
+  #logo {
+    height: 12vh;
+    width: 18vw;
+  }
+  .nav-item {
+    font-size: 14px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+  .nav-items {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
+  .nav-item {
+    margin: 10px 0;
+  }
+  #slider {
+    flex: 1;
+    height: 90%;
+    max-width: 100%;
+    padding-top: 0;
+  }
+  .slideshow-container {
+    height: 100%;
+  }
+  .mySlides img {
+    height: 100%;
+    width: auto;
+  }
+  .prev, .next {
+    top: calc(70% - 22px);
+    font-size: 12px;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .table{
+    margin-top: 40vh;
+
+  }
+  
+}
+
+
+@media (max-width: 576px) {
+  #slider {
+    flex: 1;
+    height: 90%;
+    max-width: 100%;
+    padding-top: 0;
+  }
+  .slideshow-container {
+    height: 100%;
+  }
+  .mySlides img {
+    height: 100%;
+    width: auto;
+  }
+  .prev, .next {
+    top: calc(70% - 22px);
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  #logo {
+    height: 10vh;
+    width: 25vw;
+  }
+  .nav-item {
+    font-size: 12px;
+  }
+ 
+  .mission{
+    margin: 20px;
+  }
+  .mission:hover{
+    margin: 20px;
+  }
+  #socialMeida a{
+    margin-right: 3vw;
+  }
+}
+
+

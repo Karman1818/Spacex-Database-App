@@ -1,0 +1,179 @@
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="space,spacex,aerospace,elon musk,mars,falcon 9,falcon heavy,dragon" />
+    <meta name="author" content="Marceli Karman">
+    <title>SpaceX || Apply for Job</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script> 
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.jpeg">
+
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #1f4277;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0e2950;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        margin: 300px auto; 
+        padding: 15px;
+    }
+
+    input[type="text"], textarea, select {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 300px auto; 
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    input[type="text"], textarea, select {
+        padding: 4px;
+        margin-bottom: 8px;
+    }
+
+    input[type="submit"] {
+        padding: 6px 12px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+            <nav class="nav">
+                <a href="/"><img id="logo" src="/static/img/spacex.png" alt="logo"></a>
+                <button class="nav-item"><a class="link1" href="/mission">MISSION</a></button>
+                <button class="nav-item"><a class="link1" href="/spaceman">SPACEMAN'S</a></button>
+                <button class="nav-item"><a class="link1" href="/scientist">SCIENTISTS</a></button>
+                <button class="nav-item"><a class="link1" href="/workwithus">WORK WITH US</a></button>
+                <button class="nav-item"><a class="link1" href="/management">MISSION MANAGMENT</a></button>
+                <button class="nav-item"><a class="link1" href="/login">LOG IN</a></button>
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <h2 id="update">Notifications</h2>
+                    <p>Dear SpaceX community, we are thrilled to announce the successful completion of our latest Starlink mission, deploying 60 satellites into orbit. This marks another significant milestone in our mission to provide global internet coverage. We extend our gratitude to all our employees and partners for their dedication and hard work.</p>
+                    <p>Attention all SpaceX enthusiasts! We are excited to announce the upcoming launch of Falcon Heavy, scheduled for next month. This mission will carry a payload of cutting-edge scientific instruments designed to explore distant planets and unlock the mysteries of the cosmos. Stay tuned for further updates and live coverage of the launch.</p>
+                    <p>Important notice: Due to unforeseen technical issues, the launch of our Crew Dragon spacecraft has been rescheduled to ensure the safety and reliability of the mission. We apologize for any inconvenience this may cause and appreciate your understanding as we work diligently to resolve the issue. Updates will be provided as soon as new launch dates are confirmed.</p>
+                    <p>Breaking news: Elon Musk surprises SpaceX employees with an unexpected treat! In celebration of a record-breaking year, Elon Musk has announced that all SpaceX employees will receive a free ice cream voucher redeemable at any local ice cream parlor. This gesture of appreciation comes as a token of gratitude for the hard work and dedication of the entire SpaceX team.</p>
+                    <p>SpaceX reaches for the stars once again! Our next mission, codenamed "Galactic Odyssey," is set to embark on an ambitious journey to explore the outer reaches of the solar system. Equipped with state-of-the-art technology and fueled by the spirit of discovery, this mission represents a bold step forward in humanity's quest to unlock the secrets of the cosmos.</p>
+                    <p>Dear space enthusiasts, get ready for an out-of-this-world experience! SpaceX is proud to announce the launch of our new virtual reality tour, "SpaceX Universe." Step into the shoes of an astronaut and embark on a thrilling journey through the wonders of space, from the surface of Mars to the rings of Saturn. Join us as we push the boundaries of imagination and explore the infinite possibilities of the universe.</p>
+
+
+                </div>
+                <button id="Dots" onclick="openNav()">▲</button>
+            </nav>
+           
+            <div class="container">
+                <h1>Cirrcatulum Vitae</h1>
+                <form action="/submit_cv" method="post">
+                    <h2>Personal Information</h2>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="text" id="dob" name="dob" required>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="position">Position:</label>
+                    <select id="position" name="position" required>
+                        <option value="scientist">Scientist</option>
+                        <option value="spaceman">Spaceman</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+                {% if submission_status %}
+                <p>{{ submission_status }}</p>
+            {% endif %}
+            </div>
+
+    <footer class="footer">
+        <div id="contact">
+            <span>CONTACT INFORMATION</span>
+            <ul>
+                <li>u38_markar_lbn@technischools.com</li>
+                <li>+48 721 221 299</li>
+            </ul>
+        </div>
+        
+        <div id="trademark">
+            <div>SPACEX&trade;2024</div>
+        </div>
+
+        <div id="privacyPolicy">
+            <a href="https://www.spacex.com/media/privacy_policy_spacex.pdf" target="_blank">Privacy Policy</a>
+        </div>
+        
+        <div id="socialMedia">
+            <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="/static/img/twitter.png" alt=""></a>
+            <a href="https://www.facebook.com/spacextechnologies?locale=pl_PL" target="_blank"><img src="/static/img/fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/spacex/" target="_blank"><img src="/static/img/intsa.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@SpaceX" target="_blank"><img src="/static/img/yt.png" alt="YouTube"></a>
+        </div>
+        
+
+
+    </footer>
+
+</body>
+</html>

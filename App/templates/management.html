@@ -1,0 +1,394 @@
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="space,spacex,aerospace,elon musk,mars,falcon 9,falcon heavy,dragon" />
+    <meta name="author" content="Marceli Karman">
+    <title>SpaceX</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script> 
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.jpeg">
+
+    <style>
+.main {
+    height: auto;
+}
+
+.table {
+    border: none;
+    height: auto;
+}
+
+.main h1 {
+    margin-top: 15vh;
+}
+
+.notlogged-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.notlogged {
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+.addordeletecontainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+}
+
+.addordelete {
+    width: 45%;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 20px; 
+}
+
+.addordelete h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.addordelete label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.addordelete input[type="text"],
+.addordelete input[type="date"],
+.addordelete input[type="number"],
+.addordelete select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addordelete button {
+    background-color: #1f4277;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+
+@media (max-width: 1200px) {
+    .addordelete {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main h1 {
+        margin-top: 5vh;
+        font-size: 1.5em;
+    }
+
+    .notlogged {
+        font-size: large;
+        margin: 100px;
+        height: auto;
+    }
+
+    .addordeletecontainer {
+        flex-direction: column;
+        align-items: center;
+        margin: 120px;
+    }
+
+    .addordelete {
+        width: 90%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .addordelete button {
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+            <nav class="nav">
+                <a href="/"><img id="logo" src="/static/img/spacex.png" alt="logo"></a>
+                <button class="nav-item"><a class="link1" href="/mission">MISSION</a></button>
+                <button class="nav-item"><a class="link1" href="/spaceman">SPACEMAN'S</a></button>
+                <button class="nav-item"><a class="link1" href="/scientist">SCIENTISTS</a></button>
+                <button class="nav-item"><a class="link1" href="/workwithus">WORK WITH US</a></button>
+                <button class="nav-item"><a class="link1" href="/management">MISSION MANAGMENT</a></button>
+                <button class="nav-item"><a class="link1" href="/login">LOG IN</a></button>
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <h2 id="update">Notifications</h2>
+                    <p>Dear SpaceX community, we are thrilled to announce the successful completion of our latest Starlink mission, deploying 60 satellites into orbit. This marks another significant milestone in our mission to provide global internet coverage. We extend our gratitude to all our employees and partners for their dedication and hard work.</p>
+                    <p>Attention all SpaceX enthusiasts! We are excited to announce the upcoming launch of Falcon Heavy, scheduled for next month. This mission will carry a payload of cutting-edge scientific instruments designed to explore distant planets and unlock the mysteries of the cosmos. Stay tuned for further updates and live coverage of the launch.</p>
+                    <p>Important notice: Due to unforeseen technical issues, the launch of our Crew Dragon spacecraft has been rescheduled to ensure the safety and reliability of the mission. We apologize for any inconvenience this may cause and appreciate your understanding as we work diligently to resolve the issue. Updates will be provided as soon as new launch dates are confirmed.</p>
+                    <p>Breaking news: Elon Musk surprises SpaceX employees with an unexpected treat! In celebration of a record-breaking year, Elon Musk has announced that all SpaceX employees will receive a free ice cream voucher redeemable at any local ice cream parlor. This gesture of appreciation comes as a token of gratitude for the hard work and dedication of the entire SpaceX team.</p>
+                    <p>SpaceX reaches for the stars once again! Our next mission, codenamed "Galactic Odyssey," is set to embark on an ambitious journey to explore the outer reaches of the solar system. Equipped with state-of-the-art technology and fueled by the spirit of discovery, this mission represents a bold step forward in humanity's quest to unlock the secrets of the cosmos.</p>
+                    <p>Dear space enthusiasts, get ready for an out-of-this-world experience! SpaceX is proud to announce the launch of our new virtual reality tour, "SpaceX Universe." Step into the shoes of an astronaut and embark on a thrilling journey through the wonders of space, from the surface of Mars to the rings of Saturn. Join us as we push the boundaries of imagination and explore the infinite possibilities of the universe.</p>
+
+
+                </div>
+                <button id="Dots" onclick="openNav()">▲</button>
+            </nav>
+            {% if 'username' in session %}
+            <div class="main">
+            <h1>Employee Management</h1>
+            <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Start Date</th>
+                        <th>Salary</th>
+                        <th>Mission Experience</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.EmployeeId }}</td>
+                        <td>{{ employee.FirstName }}</td>
+                        <td>{{ employee.LastName }}</td>
+                        <td>{{ employee.StartDate }}</td>
+                        <td>{{ employee.Salary }}</td>
+                        <td>{{ employee.MissionExperience }}</td>
+                        <td>{{ employee.role.RoleName }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+<div class="addordeletecontainer">
+<div class="addordelete">
+<h1>Add Employee</h1>
+    <form action="/add_employee" method="post">
+        <div>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required>
+        </div>
+        <div>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required>
+        </div>
+        <div>
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required>
+        </div>
+        <div>
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" name="salary" required>
+        </div>
+        <div>
+            <label for="mission_experience">Mission Experience:</label>
+            <input type="number" id="mission_experience" name="mission_experience">
+        </div>
+        <div>
+            <label for="employee_role_id">Employee Role:</label>
+            <select id="employee_role_id" name="employee_role_id" required>
+                <option value="1">Scientist</option>
+                <option value="2">Spaceman</option>
+                <option value="3">Captain</option>
+            </select>
+        </div>
+        
+        <button type="submit">Add Employee</button>
+    </form>
+</div>
+<div class="addordelete">
+<form id="delete_form" action="/delete_employee" method="post">
+    <h1>Delete Employee</h1>
+    <select name="employee_id" id="employee_id">
+        {% for employee in employees %}
+            <option value="{{ employee.EmployeeId }}">{{ employee.FirstName }} {{ employee.LastName }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Delete Employee</button>
+</form>
+</div>
+</div>
+
+<h1>Approve Job Application</h1>
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job_application in job_applications %}
+            <tr>
+                <td>{{ job_application.JobApplicationId }}</td>
+                <td>{{ job_application.FirstName }}</td>
+                <td>{{ job_application.LastName }}</td>
+                <td>{{ job_application.DateOfBirth }}</td>
+                <td>{{ job_application.Email }}</td>
+                <td>{{ job_application.Phone }}</td>
+                <td>{{ job_application.role.RoleName }}</td>
+                <td>
+                    <form action="/move_job_application" method="post">
+                        <input type="hidden" name="job_application_id" value="{{ job_application.JobApplicationId }}">
+                        <input type="number" name="salary" placeholder="Salary" required>
+                        <input type="number" name="mission_experience" placeholder="Mission Experience" required>
+                        <button type="submit">Approve</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<h1>Mission Management</h1>
+<div class="table">
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Launch Date</th>
+            <th>Return Date</th>
+            <th>Mission Team</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mission in missions %}
+        <tr>
+            <td>{{ mission.MissionId }}</td>
+            <td>{{ mission.Name }}</td>
+            <td>{{ mission.LaunchDate }}</td>
+            <td>{{ mission.ReturnDate }}</td>
+            <td>{{ mission.MissionTeam.TeamName }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+
+<div class="addordeletecontainer">
+    <div class="addordelete">
+        <h1>Add Mission</h1>
+        <form id="add_mission_form" action="/add_mission" method="post">
+            <div>
+                <label for="name">Mission Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="launch_date">Launch Date:</label>
+                <input type="date" id="launch_date" name="launch_date" required>
+            </div>
+            <div>
+                <label for="return_date">Return Date:</label>
+                <input type="date" id="return_date" name="return_date">
+            </div>
+            <div>
+                <label for="mission_team_id">Mission Team:</label>
+                <select id="mission_team_id" name="mission_team_id" required>
+                    <option value="1">AlienX</option>
+                    <option value="2">FalconY</option>
+                    <option value="3">CosmicSpeed</option>
+                </select>
+            </div>
+            <button type="submit">Add Mission</button>
+        </form>
+    </div>
+
+
+    <div class="addordelete">
+        <h1>Delete Mission</h1>
+        <form id="delete_mission_form" action="/delete_mission" method="post">
+            <div>
+                <label for="MissionId">Select Mission to Delete:</label>
+                <select id="MissionId" name="MissionId" required>
+                    {% for mission in missions %}
+                    <option value="{{ mission.MissionId }}">{{ mission.Name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit">Delete Mission</button>
+        </form>
+    </div>
+</div>
+
+
+        {% else %}
+        <div class="notlogged-container">
+            <p class="notlogged">Log in to access this page.</p>
+        </div>
+        {% endif %}
+
+
+            
+           
+    <footer class="footer">
+        <div id="contact">
+            <span>CONTACT INFORMATION</span>
+            <ul>
+                <li>u38_markar_lbn@technischools.com</li>
+                <li>+48 721 221 299</li>
+            </ul>
+        </div>
+        
+        <div id="trademark">
+            <div>SPACEX&trade;2024</div>
+        </div>
+
+        <div id="privacyPolicy">
+            <a href="https://www.spacex.com/media/privacy_policy_spacex.pdf" target="_blank">Privacy Policy</a>
+        </div>
+        
+        <div id="socialMedia">
+            <a href="https://twitter.com/SpaceX?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="/static/img/twitter.png" alt=""></a>
+            <a href="https://www.facebook.com/spacextechnologies?locale=pl_PL" target="_blank"><img src="/static/img/fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/spacex/" target="_blank"><img src="/static/img/intsa.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@SpaceX" target="_blank"><img src="/static/img/yt.png" alt="YouTube"></a>
+        </div>
+        
+
+
+    </footer>
+
+</body>
+</html>
