@@ -191,10 +191,13 @@ Pre-seeded administrator accounts (defined in `schema.sql`):
 ## 🖼 Screenshots & ERD
 
 ### Entity Relationship Diagram (ERD)
-Refer to [`ERD.png`](file:///c:/Users/MarceliKarman/Desktop/Spacex-Database-App/ERD.png) for full entity relationships and field definitions.
+![SpaceX Database Entity Relationship Diagram](ERD.png)
+
+*Full entity relationships and relational schema definitions across Missions, Payloads, Launch Sites, and Cores.*
 
 ---
 
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
