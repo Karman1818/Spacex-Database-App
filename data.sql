@@ -1,8 +1,9 @@
 
-create login marceli with password = 'karman';
-create user marceli for login marceli;
+-- Database Application User & Role Provisioning
+create login spacex_app_user with password = 'StrongPassword!123';
+create user spacex_app_user for login spacex_app_user;
 create role viewers
-alter role viewers add member marceli
+alter role viewers add member spacex_app_user
 grant select on database::SpaceX to viewers
 grant insert on database::SpaceX to viewers
 grant delete on database::SpaceX to viewers
@@ -67,6 +68,7 @@ delete from JobApplication where JobApplicationId = @JobApplicationId
 commit tran
 
 end
+
 
 
 

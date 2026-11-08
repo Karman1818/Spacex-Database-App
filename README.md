@@ -9,7 +9,7 @@ A full-stack web application designed for managing space missions, flight crews,
 
 ---
 
-## 📌 Table of Contents
+## 📑 Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -27,7 +27,7 @@ A full-stack web application designed for managing space missions, flight crews,
 
 ---
 
-## 📖 Overview
+## 🌌 Overview
 
 The **SpaceX Database Management App** bridges public-facing promotional & recruitment features with an internal administrative dashboard. It offers space enthusiasts and job applicants insight into upcoming missions, team rosters, and scientific achievements while giving administrators effortless control over mission planning, personnel hiring, and database records—without requiring manual SQL queries.
 
@@ -35,14 +35,14 @@ The **SpaceX Database Management App** bridges public-facing promotional & recru
 
 ## ✨ Key Features
 
-### 🌐 Public Portal
+### 👨‍🚀 Public Portal
 - **Dynamic Landing Page**: Showcases upcoming missions (*Mars*, *Moon*, *AroundEarth*), launch windows, and team assignments.
 - **Mission Explorer (`/mission`)**: Browse planned space missions with dynamic sorting by launch date, return date, mission name, or team name.
 - **Crew Roster (`/spaceman`)**: View astronauts and flight captains sorted by seniority, experience, salary, or start date.
 - **Scientific Division (`/scientist`)**: Discover research personnel sorted by mission achievements and experience.
 - **Career Portal (`/workwithus`)**: Interactive job application form allowing candidates to submit CV details directly into the database application pipeline.
 
-### 🔐 Administrative Portal (`/management`)
+### 🛡️ Administrative Portal (`/management`)
 - **Admin Authentication**: Secure login system with encrypted password verification.
 - **Personnel Management**: Add new employees, delete existing records, and update crew metrics.
 - **Mission Management**: Create and schedule new space missions or remove completed/cancelled ones.
@@ -50,7 +50,7 @@ The **SpaceX Database Management App** bridges public-facing promotional & recru
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 | Domain | Technology |
 | :--- | :--- |
@@ -62,7 +62,7 @@ The **SpaceX Database Management App** bridges public-facing promotional & recru
 
 ---
 
-## 🗄 Database Architecture
+## 🏛️ Database Architecture
 
 The relational database (`SpaceX`) is designed for optimal performance, data integrity, and separation of concerns.
 
@@ -76,10 +76,10 @@ The relational database (`SpaceX`) is designed for optimal performance, data int
 +---------------+                       +---------------+
 |   Employee    |                       | JobApplication|
 +---------------+                       +---------------+
-        |                                       
+        |                                       |
 +---------------+                       +---------------+
-| MissionTeam   |<--------------------->|    Mission    |
-+---------------+  (MissionTeam_Employee)+---------------+
+|  MissionTeam  |<--------------------->|    Mission    |
++---------------+ (MissionTeam_Employee)+---------------+
 ```
 
 ### Key Components:
@@ -109,10 +109,13 @@ Spacex-Database-App/
 │   │   ├── management.html   # Admin dashboard
 │   │   └── login.html        # Authentication page
 │   └── App.py                # Main Flask application & route definitions
+├── docs/
+│   └── SPECIFICATIONS.md     # Functional specification and requirements
 ├── schema.sql                # SQL script for database creation, tables & initial seed data
 ├── data.sql                  # SQL script for views, stored procedures & user permissions
 ├── ERD.png                   # Entity Relationship Diagram image
-├── REQUIREMENTS.txt          # Original project requirements specification
+├── requirements.txt          # Python package dependencies
+├── LICENSE                   # MIT License
 └── README.md                 # Project documentation
 ```
 
@@ -143,8 +146,8 @@ Ensure you have the following installed on your machine:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YourUsername/Spacex-Database-App.git
-   cd Spacex-Database-App/App
+   git clone https://github.com/Karman1818/Spacex-Database-App.git
+   cd Spacex-Database-App
    ```
 2. Create and activate a virtual environment (optional but recommended):
    ```bash
@@ -154,29 +157,29 @@ Ensure you have the following installed on your machine:
    # On macOS/Linux:
    source venv/bin/activate
    ```
-3. Install required Python packages:
+3. Install required Python dependencies:
    ```bash
-   pip install flask flask-login flask-sqlalchemy pyodbc werkzeug
+   pip install -r requirements.txt
    ```
-4. Configure database connection parameters in `App/App.py`:
+4. Configure database connection parameters in `App/App.py` (or through environment variables):
    ```python
-   server = r'YOUR_SERVER_NAME\SQLEXPRESS'
-   database = 'SpaceX'
-   username = 'your_db_username'
-   password = 'your_db_password'
+   server = os.getenv('DB_SERVER', r'localhost\SQLEXPRESS')
+   database = os.getenv('DB_NAME', 'SpaceX')
+   username = os.getenv('DB_USER', 'spacex_app_user')
+   password = os.getenv('DB_PASSWORD', 'StrongPassword!123')
    ```
 
 ### 3. Running the App
 
 Start the Flask development server:
 ```bash
-python App.py
+python App/App.py
 ```
 Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ---
 
-## 🔑 Admin Access & Demo Credentials
+## 🔐 Admin Access & Demo Credentials
 
 Pre-seeded administrator accounts (defined in `schema.sql`):
 
@@ -188,16 +191,16 @@ Pre-seeded administrator accounts (defined in `schema.sql`):
 
 ---
 
-## 🖼 Screenshots & ERD
+## 📸 Screenshots & ERD
 
 ### Entity Relationship Diagram (ERD)
+
 ![SpaceX Database Entity Relationship Diagram](ERD.png)
 
 *Full entity relationships and relational schema definitions across Missions, Payloads, Launch Sites, and Cores.*
 
 ---
 
-## 📜 License
+## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
