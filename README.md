@@ -29,7 +29,7 @@ A full-stack web application designed for managing space missions, flight crews,
 
 ## 🌌 Overview
 
-The **SpaceX Database Management App** bridges public-facing promotional & recruitment features with an internal administrative dashboard. It offers space enthusiasts and job applicants insight into upcoming missions, team rosters, and scientific achievements while giving administrators effortless control over mission planning, personnel hiring, and database records—without requiring manual SQL queries.
+The **SpaceX Database Management App** bridges public-facing promotional & recruitment features with an internal administrative dashboard. It offers space enthusiasts and job applicants insight into upcoming missions, team rosters, and scientific achievements while giving administrators effortless control over mission planning, personnel hiring, and database records — without requiring manual SQL queries.
 
 ---
 
@@ -202,7 +202,7 @@ Pre-seeded administrator accounts (defined in `schema.sql`):
 
 ---
 
-## 🖼 Screenshots & ERD
+## 🖼️ Screenshots & ERD
 
 ### Entity Relationship Diagram (ERD)
 
