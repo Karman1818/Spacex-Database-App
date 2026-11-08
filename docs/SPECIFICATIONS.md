@@ -4,7 +4,7 @@
 
 ---
 
-## 🧭 Page Architecture & User Flows
+## 📑 Page Architecture & User Flows
 
 ### 1. Landing Page (`/`)
 - **Dynamic Hero Carousel**: Positioned below the top navigation, highlighting the corporate logo, inspiring aerospace slogans, and high-impact historical spaceflight milestones.

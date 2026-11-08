@@ -58,6 +58,7 @@ The **SpaceX Database Management App** bridges public-facing promotional & recru
 | **ORM & Database Driver** | [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/), [pyodbc](https://mkleehammer.github.io/pyodbc/) |
 | **Database Engine** | [Microsoft SQL Server](https://www.microsoft.com/sql-server) (T-SQL) |
 | **Authentication & Security** | Flask-Login, Session Management, MD5 Hash Verification |
+| **Configuration** | python-dotenv (`.env`) |
 | **Frontend** | HTML5, CSS3 (Space Blue Theme), Jinja2 Templates, JavaScript |
 
 ---
@@ -111,6 +112,8 @@ Spacex-Database-App/
 │   └── App.py                # Main Flask application & route definitions
 ├── docs/
 │   └── SPECIFICATIONS.md     # Functional specification and requirements
+├── .env.example              # Environment variables template
+├── .gitignore                # Git ignore rules
 ├── schema.sql                # SQL script for database creation, tables & initial seed data
 ├── data.sql                  # SQL script for views, stored procedures & user permissions
 ├── ERD.png                   # Entity Relationship Diagram image
@@ -161,12 +164,20 @@ Ensure you have the following installed on your machine:
    ```bash
    pip install -r requirements.txt
    ```
-4. Configure database connection parameters in `App/App.py` (or through environment variables):
-   ```python
-   server = os.getenv('DB_SERVER', r'localhost\SQLEXPRESS')
-   database = os.getenv('DB_NAME', 'SpaceX')
-   username = os.getenv('DB_USER', 'spacex_app_user')
-   password = os.getenv('DB_PASSWORD', 'StrongPassword!123')
+4. Configure environment variables:
+   Copy `.env.example` to `.env` and adjust the database credentials if necessary:
+   ```bash
+   cp .env.example .env
+   ```
+
+   Default configuration:
+   ```env
+   DB_SERVER=localhost\SQLEXPRESS
+   DB_NAME=SpaceX
+   DB_USER=spacex_app_user
+   DB_PASSWORD=StrongPassword!123
+   DB_DRIVER=ODBC Driver 17 for SQL Server
+   SECRET_KEY=spacex-production-secret-key-change-me
    ```
 
 ### 3. Running the App
@@ -179,7 +190,7 @@ Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ---
 
-## 🔐 Admin Access & Demo Credentials
+## 🔑 Admin Access & Demo Credentials
 
 Pre-seeded administrator accounts (defined in `schema.sql`):
 
@@ -191,7 +202,7 @@ Pre-seeded administrator accounts (defined in `schema.sql`):
 
 ---
 
-## 📸 Screenshots & ERD
+## 🖼 Screenshots & ERD
 
 ### Entity Relationship Diagram (ERD)
 
@@ -201,6 +212,6 @@ Pre-seeded administrator accounts (defined in `schema.sql`):
 
 ---
 
-## 📄 License
+## 📜 License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.

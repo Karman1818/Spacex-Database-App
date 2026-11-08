@@ -1,6 +1,28 @@
-.idea/
-*.pyc
-__pycache__/
+# Environment Variables
 .env
+.env.*
+!.env.example
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# IDEs & Editors
+.idea/
+App/.idea/
+**/.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS Artifacts
 .DS_Store
 Thumbs.db

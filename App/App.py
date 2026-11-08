@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash,session
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required,current_user
 import pyodbc
@@ -8,18 +9,26 @@ from sqlalchemy import text
 
 
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 app = Flask(__name__)
-app.secret_key = 'coolKey'
+app.secret_key = os.getenv('SECRET_KEY', 'spacex-secret-key-change-in-production')
 
-server = r'TS-0009\SQLEXPRESS'
-database = 'SpaceX'
-username = 'marceli'
-password = 'karman'
+server = os.getenv('DB_SERVER', r'localhost\SQLEXPRESS')
+database = os.getenv('DB_NAME', 'SpaceX')
+username = os.getenv('DB_USER', 'spacex_app_user')
+password = os.getenv('DB_PASSWORD', 'StrongPassword!123')
+driver = os.getenv('DB_DRIVER', 'ODBC Driver 17 for SQL Server')
 
+conn_str = f'DRIVER={{{driver}}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
-conn_str = f'DRIVER=ODBC Driver 17 for SQL Server;SERVER={server};DATABASE={database};UID={username};PWD={password}'
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://marceli:karman@TS-0009\\SQLEXPRESS/SpaceX?driver=ODBC+Driver+17+for+SQL+Server'
+# Configure SQLAlchemy connection via pyodbc ODBC connection string
+import urllib.parse
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc:///?odbc_connect={urllib.parse.quote_plus(conn_str)}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 data = SQLAlchemy(app)
